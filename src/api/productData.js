@@ -5,7 +5,8 @@ export const productData = [
     date: "",
     location: "Online",
     price: 1000,
-    wishlist: false
+    wishlist: false,
+    cartQty: 0
   },
   {
     id: 2,
@@ -13,7 +14,8 @@ export const productData = [
     date: "",
     location: "Online",
     price: 999,
-    wishlist: false
+    wishlist: false,
+    cartQty: 0
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const productData = [
     date: "",
     location: "Online",
     price: 499,
-    wishlist: false
+    wishlist: false,
+    cartQty: 0
   }
 ];

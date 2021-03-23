@@ -1,3 +1,4 @@
+import { Cart } from "./components/Cart";
 import ProductListing from "./components/ProductListing";
 import { Wishlist } from "./components/Wishlist";
 import { useCartData } from "./contexts/dataContext";
@@ -23,10 +24,15 @@ export default function App() {
       >
         Wishlist
       </button>
-      <ProductListing />
-      <Wishlist />
-      {/* {state.route === "productListing" && <ProductListing />}
-      {state.route === "wishlist" && <Wishlist />} */}
+      <button
+        className="btn"
+        onClick={() => dispatch({ type: ROUTE, payload: "cart" })}
+      >
+        Cart
+      </button>
+      {state.route === "productListing" && <ProductListing />}
+      {state.route === "wishlist" && <Wishlist />}
+      {state.route === "cart" && <Cart />}
     </div>
   );
 }
