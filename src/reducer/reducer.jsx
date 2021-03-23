@@ -9,7 +9,6 @@ export const reducer = (state, action) => {
       return { ...state, productData: temp };
 
     case "ROUTE":
-      console.log("Here");
       return { ...state, route: action.payload };
 
     case "INITIALLOAD":

@@ -1,16 +1,9 @@
 import { useCartData } from "../contexts/dataContext";
 import { useProductLoader } from "../hooks/useProductLoader";
-import { useEffect } from "react";
 
 export default function ProductListing() {
   const { state, dispatch } = useCartData();
   const { response } = useProductLoader();
-
-  // useEffect(() => {
-  //   if (response) {
-  //     dispatch({ type: "INITIALLOAD", payload: response.data.addresses });
-  //   }
-  // }, []);
 
   const toggleWishlist = (id) =>
     dispatch({ type: "ADDTOWISHLIST", payload: id });
