@@ -10,7 +10,7 @@ export const reducer = (state, action) => {
         ...state,
         productData: state.productData.map((product) =>
           product.id === action.payload
-            ? { ...product, wishlist: !product.wishlist }
+            ? { ...product, wishlist: true }
             : product
         )
       };
@@ -18,8 +18,10 @@ export const reducer = (state, action) => {
     case REMOVE_FROM_WISHLIST:
       return {
         ...state,
-        productData: state.productData.filter(
-          (product) => product.id !== action.payload
+        productData: state.productData.map((product) =>
+          product.id === action.payload
+            ? { ...product, wishlist: false }
+            : product
         )
       };
 
