@@ -1,10 +1,12 @@
 import ProductListing from "./components/ProductListing";
 import { Wishlist } from "./components/Wishlist";
 import { useCartData } from "./contexts/dataContext";
+import { useProductLoader } from "./hooks/useProductLoader";
 import "./styles.css";
 
 export default function App() {
   const { state, dispatch } = useCartData();
+  const { response } = useProductLoader();
 
   return (
     <div className="App">

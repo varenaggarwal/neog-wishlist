@@ -3,7 +3,6 @@ import { useProductLoader } from "../hooks/useProductLoader";
 
 export default function ProductListing() {
   const { state, dispatch } = useCartData();
-  const { response } = useProductLoader();
 
   const toggleWishlist = (id) =>
     dispatch({ type: "ADDTOWISHLIST", payload: id });
