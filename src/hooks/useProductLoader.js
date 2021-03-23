@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useCartData } from "../contexts/dataContext";
+import { INITIAL_LOAD } from "../reducer/reducer";
 
 export function useProductLoader() {
   const [isLoading, setIsLoading] = useState(false);
@@ -15,7 +16,7 @@ export function useProductLoader() {
         console.log({ serverResponse });
         setIsLoading(() => false);
         dispatch({
-          type: "INITIALLOAD",
+          type: INITIAL_LOAD,
           payload: serverResponse.data.products
         });
       } catch (error) {
