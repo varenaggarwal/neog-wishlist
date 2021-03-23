@@ -1,5 +1,6 @@
 import { useCartData } from "../contexts/dataContext";
-import { REMOVE_FROM_CART } from "../contexts/dataContext";
+import { REMOVE_FROM_WISHLIST } from "../reducer/reducer";
+
 export function Wishlist() {
   const { state, dispatch } = useCartData();
   return (
@@ -11,12 +12,15 @@ export function Wishlist() {
             <span>{product.name}</span>
             <span> - {product.price}</span>
             <button
-              onClick={() =>
-                dispatch({ type: REMOVE_FROM_CART, payload: product.id })
-              }
               className="btn"
+              onClick={() =>
+                dispatch({
+                  type: REMOVE_FROM_WISHLIST,
+                  payload: product.id
+                })
+              }
             >
-              Remove
+              REMOVE
             </button>
           </li>
         ) : null

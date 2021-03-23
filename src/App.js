@@ -23,8 +23,10 @@ export default function App() {
       >
         Wishlist
       </button>
-      {state.route === "productListing" && <ProductListing />}
-      {state.route === "wishlist" && <Wishlist />}
+      <ProductListing />
+      <Wishlist />
+      {/* {state.route === "productListing" && <ProductListing />}
+      {state.route === "wishlist" && <Wishlist />} */}
     </div>
   );
 }

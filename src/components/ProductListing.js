@@ -1,5 +1,4 @@
 import { useCartData } from "../contexts/dataContext";
-import { useProductLoader } from "../hooks/useProductLoader";
 import { ADD_TO_WISHLIST } from "../reducer/reducer";
 
 export default function ProductListing() {

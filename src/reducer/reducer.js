@@ -14,8 +14,14 @@ export const reducer = (state, action) => {
             : product
         )
       };
+
     case REMOVE_FROM_WISHLIST:
-      return { ...state, productData: [{}] };
+      return {
+        ...state,
+        productData: state.productData.filter(
+          (product) => product.id !== action.payload
+        )
+      };
 
     case ROUTE:
       return { ...state, route: action.payload };
@@ -24,6 +30,6 @@ export const reducer = (state, action) => {
       return { ...state, productData: action.payload };
 
     default:
-      break;
+      return state;
   }
 };
