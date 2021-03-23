@@ -6,7 +6,7 @@ import "./styles.css";
 
 export default function App() {
   const { state, dispatch } = useCartData();
-  const { response } = useProductLoader();
+  const response = useProductLoader();
 
   return (
     <div className="App">
