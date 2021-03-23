@@ -11,11 +11,12 @@ export function useProductLoader() {
     (async function () {
       setIsLoading(() => true);
       try {
-        const serverResponse = await axios.get("/api/addresses");
+        const serverResponse = await axios.get("/api/products");
+        console.log({ serverResponse });
         setIsLoading(() => false);
         dispatch({
           type: "INITIALLOAD",
-          payload: serverResponse.data.addresses
+          payload: serverResponse.data.products
         });
       } catch (error) {
         setError(() => error);
