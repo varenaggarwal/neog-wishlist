@@ -1,11 +1,12 @@
 import { useCartData } from "../contexts/dataContext";
 import { useProductLoader } from "../hooks/useProductLoader";
+import { ADD_TO_WISHLIST } from "../reducer/reducer";
 
 export default function ProductListing() {
   const { state, dispatch } = useCartData();
 
   const toggleWishlist = (id) =>
-    dispatch({ type: "ADDTOWISHLIST", payload: id });
+    dispatch({ type: ADD_TO_WISHLIST, payload: id });
   return (
     <>
       <h1>Product Listing</h1>

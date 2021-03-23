@@ -2,6 +2,7 @@ import ProductListing from "./components/ProductListing";
 import { Wishlist } from "./components/Wishlist";
 import { useCartData } from "./contexts/dataContext";
 import { useProductLoader } from "./hooks/useProductLoader";
+import { ROUTE } from "./reducer/reducer";
 import "./styles.css";
 
 export default function App() {
@@ -12,13 +13,13 @@ export default function App() {
     <div className="App">
       <button
         className="btn"
-        onClick={() => dispatch({ type: "ROUTE", payload: "productListing" })}
+        onClick={() => dispatch({ type: ROUTE, payload: "productListing" })}
       >
         Product Listing
       </button>
       <button
         className="btn"
-        onClick={() => dispatch({ type: "ROUTE", payload: "wishlist" })}
+        onClick={() => dispatch({ type: ROUTE, payload: "wishlist" })}
       >
         Wishlist
       </button>
